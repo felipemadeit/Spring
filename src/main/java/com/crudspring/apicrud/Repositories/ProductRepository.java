@@ -7,4 +7,5 @@ import com.crudspring.apicrud.Entities.Product;
 // <Class (entity), type of the PK>
 public interface ProductRepository extends JpaRepository<Product, Long>{
 
+    
 }
