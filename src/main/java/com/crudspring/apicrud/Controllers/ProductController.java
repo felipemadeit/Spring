@@ -63,4 +63,19 @@ public class ProductController {
         return productRepository.save(product);
     }
     
+    // This method is used to delete products by the id
+    @DeleteMapping("/{id}")
+    public String deleteProduct(@PathVariable Long id) {
+
+        // Search the product or throw a exception
+        Product product = productRepository.findById(id)
+        .orElseThrow(() -> new RuntimeException("The product with id: " + id +" was not found"));
+        
+
+        productRepository.delete(product);
+
+        return "The product with the id " + id + 2 "was deleted";
+
+    }
+    
 }
